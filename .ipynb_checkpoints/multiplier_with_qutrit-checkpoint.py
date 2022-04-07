@@ -1492,51 +1492,39 @@ print("Unreferenced variables freed")
 
 print("----------------------G's loaded!!-----------------------")
 
-r1=dask.array.dot(g22s, g21s).compute()
-np.save("r1", r1)
-
-r2=dask.array.dot(r1, g20s).compute()
-np.save("r2", r2)
+r1=dask.array.dot(g22s, g21s)
+r2=dask.array.dot(r1, g20s)
 del r1
 del g20s 
 
-r3=dask.array.dot(r2, g19s).compute()
-np.save("r3", r3)
+r3=dask.array.dot(r2, g19s)
 del r2
-del g19s
-
-r4=dask.array.dot(r3, g18s).compute()
-np.save("r4", r4)
+del g19s 
+r4=dask.array.dot(r3, g18s)
 del r3
 del g18s
 
-r5=dask.array.dot(r4, g17s).compute()
-np.save("r5", r5)
+r5=dask.array.dot(r4, g17s)
 del r4
 del g17s
 
-r6=dask.array.dot(r5, g16s).compute()
-np.save("r6", r6)
+r6=dask.array.dot(r5, g16s)
 del r5
 del g16s
 
 r7=dask.array.dot(r6, g15s)
-np.save("r7", r7)
 del r6
 del g15s
 
 r8=dask.array.dot(r7, g14s)
-np.save("r8", r8)
 del r7
 del g14s
 
 r9=dask.array.dot(r8, g13s)
-np.save("r9", r9)
 del r8
 del g13s
 
 r10=dask.array.dot(r9, g12s)
-np.save("r10", r10)
 del r9
 del g12s
 
@@ -1547,62 +1535,50 @@ del g12s
 # print(r10.shape)
 
 r11=dask.array.dot(r10, g11s)
-np.save("r11", r11)
 del r10
 del g11s
 
 r12=dask.array.dot(r11, g10s)
-np.save("r12", r12)
 del r11
 del g10s
 
 r13=dask.array.dot(r12, g9s)
-np.save("r13", r13)
 del r12
 del g9s
 
 r14=dask.array.dot(r13, g8s)
-np.save("r14", r14)
 del r13
 del g8s
 
 r15=dask.array.dot(r14, g7s)
-np.save("r15", r15)
 del r14
 del g7s
 
 r16=dask.array.dot(r15, g6s)
-np.save("r16", r16)
 del r15
 del g6s
 
 r17=dask.array.dot(r16, g5s)
-np.save("r17", r17)
 del r16
 del g5s
 
 r18=dask.array.dot(r17, g4s)
-np.save("r18", r18)
 del r17
 del g4s
 
 r19=dask.array.dot(r18, g3s)
-np.save("r19", r19)
 del r18
 del g3s
 
 r20=dask.array.dot(r19, g2s)
-np.save("r20", r20)
 del r19
 del g2s
 
 r21=dask.array.dot(r20, g1s)
-np.save("r21", r21)
 del r20
 del g1s
 
 rf=dask.array.dot(r21, g0s).compute()
-np.save("rf", rf)
 
 
 print("Now searching element-----")
