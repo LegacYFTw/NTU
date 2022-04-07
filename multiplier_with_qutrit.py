@@ -1520,22 +1520,22 @@ np.save("r6", r6)
 del r5
 del g16s
 
-r7=dask.array.dot(r6, g15s)
+r7=dask.array.dot(r6, g15s).compute()
 np.save("r7", r7)
 del r6
 del g15s
 
-r8=dask.array.dot(r7, g14s)
+r8=dask.array.dot(r7, g14s).compute()
 np.save("r8", r8)
 del r7
 del g14s
 
-r9=dask.array.dot(r8, g13s)
+r9=dask.array.dot(r8, g13s).compute()
 np.save("r9", r9)
 del r8
 del g13s
 
-r10=dask.array.dot(r9, g12s)
+r10=dask.array.dot(r9, g12s).compute()
 np.save("r10", r10)
 del r9
 del g12s
@@ -1546,57 +1546,57 @@ del g12s
 # print("------------------r10 shape -----------------------------")
 # print(r10.shape)
 
-r11=dask.array.dot(r10, g11s)
+r11=dask.array.dot(r10, g11s).compute()
 np.save("r11", r11)
 del r10
 del g11s
 
-r12=dask.array.dot(r11, g10s)
+r12=dask.array.dot(r11, g10s).compute()
 np.save("r12", r12)
 del r11
 del g10s
 
-r13=dask.array.dot(r12, g9s)
+r13=dask.array.dot(r12, g9s).compute()
 np.save("r13", r13)
 del r12
 del g9s
 
-r14=dask.array.dot(r13, g8s)
+r14=dask.array.dot(r13, g8s).compute()
 np.save("r14", r14)
 del r13
 del g8s
 
-r15=dask.array.dot(r14, g7s)
+r15=dask.array.dot(r14, g7s).compute()
 np.save("r15", r15)
 del r14
 del g7s
 
-r16=dask.array.dot(r15, g6s)
+r16=dask.array.dot(r15, g6s).compute()
 np.save("r16", r16)
 del r15
 del g6s
 
-r17=dask.array.dot(r16, g5s)
+r17=dask.array.dot(r16, g5s).compute()
 np.save("r17", r17)
 del r16
 del g5s
 
-r18=dask.array.dot(r17, g4s)
+r18=dask.array.dot(r17, g4s).compute()
 np.save("r18", r18)
 del r17
 del g4s
 
-r19=dask.array.dot(r18, g3s)
+r19=dask.array.dot(r18, g3s).compute()
 np.save("r19", r19)
 del r18
 del g3s
 
-r20=dask.array.dot(r19, g2s)
+r20=dask.array.dot(r19, g2s).compute()
 np.save("r20", r20)
 del r19
 del g2s
 
-r21=dask.array.dot(r20, g1s)
+r21=dask.array.dot(r20, g1s).compute()
 np.save("r21", r21)
 del r20
 del g1s
