@@ -12,6 +12,7 @@ import numpy as np
 from scipy import sparse
 import dask as da
 import dask.array
+import utils
 
 """# Define CNOT gate on 4 qubits"""
 
@@ -1435,55 +1436,55 @@ g22=np.kron(g22, CNOT4)
 
 print("------------------Kron Products calculated, now loading G's-----------------")
 
-g0s = dask.array.from_array(g0, chunks=2000)
-g1s = dask.array.from_array(g1, chunks=2000)
-g2s = dask.array.from_array(g2, chunks=2000)
-g3s = dask.array.from_array(g3, chunks=2000)
-g4s = dask.array.from_array(g4, chunks=2000)
-g5s = dask.array.from_array(g5, chunks=2000)
-g6s = dask.array.from_array(g6, chunks=2000)
-g7s = dask.array.from_array(g7, chunks=2000)
-g8s = dask.array.from_array(g8, chunks=2000)
-g9s = dask.array.from_array(g9, chunks=2000)
-g10s = dask.array.from_array(g10, chunks=2000)
-g11s = dask.array.from_array(g11, chunks=2000)
-g12s = dask.array.from_array(g12, chunks=2000)
-g13s = dask.array.from_array(g13, chunks=2000)
-g14s = dask.array.from_array(g14, chunks=2000)
-g15s = dask.array.from_array(g15, chunks=2000)
-g16s = dask.array.from_array(g16, chunks=2000)
-g17s = dask.array.from_array(g17, chunks=2000)
-g18s = dask.array.from_array(g18, chunks=2000)
-g19s = dask.array.from_array(g19, chunks=2000)
-g20s = dask.array.from_array(g20, chunks=2000)
-g21s = dask.array.from_array(g21, chunks=2000)
-g22s = dask.array.from_array(g22, chunks=2000)
+# g0s = dask.array.from_array(g0, chunks=2000)
+# g1s = dask.array.from_array(g1, chunks=2000)
+# g2s = dask.array.from_array(g2, chunks=2000)
+# g3s = dask.array.from_array(g3, chunks=2000)
+# g4s = dask.array.from_array(g4, chunks=2000)
+# g5s = dask.array.from_array(g5, chunks=2000)
+# g6s = dask.array.from_array(g6, chunks=2000)
+# g7s = dask.array.from_array(g7, chunks=2000)
+# g8s = dask.array.from_array(g8, chunks=2000)
+# g9s = dask.array.from_array(g9, chunks=2000)
+# g10s = dask.array.from_array(g10, chunks=2000)
+# g11s = dask.array.from_array(g11, chunks=2000)
+# g12s = dask.array.from_array(g12, chunks=2000)
+# g13s = dask.array.from_array(g13, chunks=2000)
+# g14s = dask.array.from_array(g14, chunks=2000)
+# g15s = dask.array.from_array(g15, chunks=2000)
+# g16s = dask.array.from_array(g16, chunks=2000)
+# g17s = dask.array.from_array(g17, chunks=2000)
+# g18s = dask.array.from_array(g18, chunks=2000)
+# g19s = dask.array.from_array(g19, chunks=2000)
+# g20s = dask.array.from_array(g20, chunks=2000)
+# g21s = dask.array.from_array(g21, chunks=2000)
+# g22s = dask.array.from_array(g22, chunks=2000)
 
-# Freeing memory
-print("Freeing up memory!")
-del g1
-del g2
-del g3
-del g4
-del g5
-del g6
-del g7
-del g8
-del g9
-del g10
-del g11
-del g12
-del g13
-del g14
-del g15
-del g16
-del g17
-del g18
-del g19
-del g20
-del g21
-del g22
-print("Unreferenced variables freed")
+# # Freeing memory
+# print("Freeing up memory!")
+# del g1
+# del g2
+# del g3
+# del g4
+# del g5
+# del g6
+# del g7
+# del g8
+# del g9
+# del g10
+# del g11
+# del g12
+# del g13
+# del g14
+# del g15
+# del g16
+# del g17
+# del g18
+# del g19
+# del g20
+# del g21
+# del g22
+# print("Unreferenced variables freed")
 
 
 
@@ -1492,8 +1493,10 @@ print("Unreferenced variables freed")
 
 print("----------------------G's loaded!!-----------------------")
 
-r1=dask.array.dot(g22s, g21s).compute()
+# r1=dask.array.dot(g22s, g21s).compute()
+r1=utils.blockwise_dot(g22s, g21, max_elements=int(2**27))
 np.save("r1", r1)
+print("This works")
 
 r2=dask.array.dot(r1, g20s).compute()
 np.save("r2", r2)
