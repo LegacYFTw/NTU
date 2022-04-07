@@ -1494,7 +1494,7 @@ print("------------------Kron Products calculated, now loading G's--------------
 print("----------------------G's loaded!!-----------------------")
 
 # r1=dask.array.dot(g22s, g21s).compute()
-r1=utils.blockwise_dot(g22s, g21, max_elements=int(2**27))
+r1=utils.blockwise_dot(g22, g21, max_elements=int(2**27))
 np.save("r1", r1)
 print("This works")
 
