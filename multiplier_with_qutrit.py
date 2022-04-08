@@ -1350,43 +1350,53 @@ print('Tuple of arrays returned : ', result)
 print("Elements with value 1 exists at following indices", result[0], sep='\n')
 
 g1=np.kron(Cntrl1plus13, np.eye(3**2))
-
 g1=np.kron(g1, np.eye(2**8))
+np.save("g1", g1)
 
 g2= np.kron(np.eye(2**2), cntrl2NOT4)
 g2= np.kron(g2, np.eye(2**7))
+np.save("g2", g2)
 
 g3= np.kron(Cntrl1minus13, np.eye(3**2))
 g3= np.kron(g3, np.eye(2**8))
+np.save("g3", g3)
 
 g4= np.kron(np.eye(2), cntrl1plus1)
 g4 =np.kron(g4, np.eye(3**2))
 g4= np.kron(g4, np.eye(2**8))
+np.save("g4", g4)
 
 g5=np.kron(np.eye(2**2), Cntrl2NOT532)
 g5=np.kron(g5, np.eye(2**6))
+np.save("g5", g5)
 
 g6= np.kron(np.eye(2), cntrl1minus1)
 g6 =np.kron(g6, np.eye(3**2))
 g6= np.kron(g6, np.eye(2**8))
+np.save("g6", g6)
 
 g7=np.kron(Cntrl1plus14, np.eye(3))
 g7=np.kron(g7, np.eye(2**8))
+np.save("g7", g7)
 
 g8=np.kron(np.eye(2**2),np.eye(3))
 g8=np.kron(g8,Cntrl2NOT523)
 g8=np.kron(g8, np.eye(2**5))
+np.save("g8", g8)
 
 g9=np.kron(Cntrl1minus14, np.eye(3))
 g9=np.kron(g9, np.eye(2**8))
+np.save("g9", g9)
 
 g10=np.kron(np.eye(2), Cntrl1plus112)
 g10=np.kron(g10, np.eye(3))
 g10=np.kron(g10, np.eye(2**8))
+np.save("g10", g10)
 
 g11= np.kron(np.eye(2**2), np.eye(3))
 g11=np.kron(g11, Cntrl2NOT624)
 g11=np.kron(g11, np.eye(2**4))
+np.save("g11", g11)
 
 print("G11 Shape: -------------------------------------------------------------")
 print(g11.shape)
@@ -1395,42 +1405,53 @@ print(g11.shape)
 g12=np.kron(np.eye(2), Cntrl1minus112)
 g12=np.kron(g12, np.eye(3))
 g12=np.kron(g12, np.eye(2**8))
+np.save("g12", g12)
 
 g13=np.kron(Cntrl1plus15, np.eye(2**8))
+np.save("g13", g13)
 
 g14=np.kron(np.eye(2**2), np.eye(3**2))
 g14=np.kron(g14, Cntrl2NOT615)
 g14=np.kron(g14, np.eye(2**3))
+np.save("g14", g14)
 
 g15=np.kron(Cntrl1mius15, np.eye(2**8))
+np.save("g15", g15)
 
 g16=np.kron(np.eye(2), Cntrl1plus113)
 g16=np.kron(g16, np.eye(2**8))
+np.save("g16", g16)
 
 g17=np.kron(np.eye(2**2), np.eye(3**2))
 g17=np.kron(g17, Cntrl2NOT716)
 g17=np.kron(g17, np.eye(2**2))
+np.save("g17", g17)
 
 g18=np.kron(np.eye(2), Cntrl1mius113)
 g18=np.kron(g18, np.eye(2**8))
+np.save("g18", g18)
 
 g19=np.kron(np.eye(2**2), np.eye(3**3))
 g19=np.kron(g19, np.eye(2))
 g19=np.kron(g19, CNOT6)
 g19=np.kron(g19, np.eye(2))
+np.save("g19", g19)
 
 g20=np.kron(np.eye(2**2), np.eye(3**3))
 g20=np.kron(g20, np.eye(2**2))
 g20=np.kron(g20, CNOT5)
 g20=np.kron(g20, np.eye(2))
+np.save("g20", g20)
 
 g21=np.kron(np.eye(2**2), np.eye(3**3))
 g21=np.kron(g21, np.eye(2**3))
 g21=np.kron(g21, CNOT5)
+np.save("g21", g21)
 
 g22=np.kron(np.eye(2**2), np.eye(3**3))
 g22=np.kron(g22, np.eye(2**4))
 g22=np.kron(g22, CNOT4)
+np.save("g22", g22)
 
 """Instantiating CSC_matrix for efficient calculations """
 
@@ -1549,66 +1570,66 @@ del g12s
 # print("------------------r10 shape -----------------------------")
 # print(r10.shape)
 
-r11=dask.array.dot(r10, g11s).compute()
-np.save("r11", r11)
-del r10
-del g11s
+# r11=dask.array.dot(r10, g11s).compute()
+# np.save("r11", r11)
+# del r10
+# del g11s
 
-r12=dask.array.dot(r11, g10s).compute()
-np.save("r12", r12)
-del r11
-del g10s
+# r12=dask.array.dot(r11, g10s).compute()
+# np.save("r12", r12)
+# del r11
+# del g10s
 
-r13=dask.array.dot(r12, g9s).compute()
-np.save("r13", r13)
-del r12
-del g9s
+# r13=dask.array.dot(r12, g9s).compute()
+# np.save("r13", r13)
+# del r12
+# del g9s
 
-r14=dask.array.dot(r13, g8s).compute()
-np.save("r14", r14)
-del r13
-del g8s
+# r14=dask.array.dot(r13, g8s).compute()
+# np.save("r14", r14)
+# del r13
+# del g8s
 
-r15=dask.array.dot(r14, g7s).compute()
-np.save("r15", r15)
-del r14
-del g7s
+# r15=dask.array.dot(r14, g7s).compute()
+# np.save("r15", r15)
+# del r14
+# del g7s
 
-r16=dask.array.dot(r15, g6s).compute()
-np.save("r16", r16)
-del r15
-del g6s
+# r16=dask.array.dot(r15, g6s).compute()
+# np.save("r16", r16)
+# del r15
+# del g6s
 
-r17=dask.array.dot(r16, g5s).compute()
-np.save("r17", r17)
-del r16
-del g5s
+# r17=dask.array.dot(r16, g5s).compute()
+# np.save("r17", r17)
+# del r16
+# del g5s
 
-r18=dask.array.dot(r17, g4s).compute()
-np.save("r18", r18)
-del r17
-del g4s
+# r18=dask.array.dot(r17, g4s).compute()
+# np.save("r18", r18)
+# del r17
+# del g4s
 
-r19=dask.array.dot(r18, g3s).compute()
-np.save("r19", r19)
-del r18
-del g3s
+# r19=dask.array.dot(r18, g3s).compute()
+# np.save("r19", r19)
+# del r18
+# del g3s
 
-r20=dask.array.dot(r19, g2s).compute()
-np.save("r20", r20)
-del r19
-del g2s
+# r20=dask.array.dot(r19, g2s).compute()
+# np.save("r20", r20)
+# del r19
+# del g2s
 
-r21=dask.array.dot(r20, g1s).compute()
-np.save("r21", r21)
-del r20
-del g1s
+# r21=dask.array.dot(r20, g1s).compute()
+# np.save("r21", r21)
+# del r20
+# del g1s
 
-rf=dask.array.dot(r21, g0s).compute()
-np.save("rf", rf)
+# rf=dask.array.dot(r21, g0s).compute()
+# np.save("rf", rf)
 
 
-print("Now searching element-----")
+# print("Now searching element-----")
 
 # r1 = g22.dot(g21)
 # r2 = r1.dot(g20)
@@ -1635,7 +1656,7 @@ print("Now searching element-----")
 
 # rf = rfs.toarray()
 
-# Get the index of elements with value 15
-result = dask.array.where(rf == 1).compute()
-print('Tuple of arrays returned : ', result)
-print("Elements with value 15 exists at following indices", result[0], sep='\n')
+# # Get the index of elements with value 15
+# result = dask.array.where(rf == 1).compute()
+# print('Tuple of arrays returned : ', result)
+# print("Elements with value 15 exists at following indices", result[0], sep='\n')
