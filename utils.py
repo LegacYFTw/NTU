@@ -11,13 +11,13 @@ def _block_slices(dim_size, block_size):
         if count > dim_size:
             raise StopIteration
 
-def blockwise_dot(A, B, max_elements=int(2**27), out=None):
+def blockwise_dot(A, B, max_elements=int(2**32), out=None):
     """
     Computes the dot product of two matrices in a block-wise fashion. 
     Only blocks of `A` with a maximum size of `max_elements` will be 
     processed simultaneously.
     """
-
+    
     m,  n = A.shape
     n1, o = B.shape
 
