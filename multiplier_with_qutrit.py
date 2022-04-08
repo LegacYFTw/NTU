@@ -1514,55 +1514,55 @@ print("------------------Kron Products calculated, now loading G's--------------
 
 print("----------------------G's loaded!!-----------------------")
 
-# r1=dask.array.dot(g22s, g21s).compute()
-r1=utils.blockwise_dot(g22, g21, max_elements=int(2**27))
-np.save("r1", r1)
-print("This works")
+# # r1=dask.array.dot(g22s, g21s).compute()
+# r1=utils.blockwise_dot(g22, g21, max_elements=int(2**27))
+# np.save("r1", r1)
+# print("This works")
 
-r2=dask.array.dot(r1, g20s).compute()
-np.save("r2", r2)
-del r1
-del g20s 
+# r2=dask.array.dot(r1, g20s).compute()
+# np.save("r2", r2)
+# del r1
+# del g20s 
 
-r3=dask.array.dot(r2, g19s).compute()
-np.save("r3", r3)
-del r2
-del g19s
+# r3=dask.array.dot(r2, g19s).compute()
+# np.save("r3", r3)
+# del r2
+# del g19s
 
-r4=dask.array.dot(r3, g18s).compute()
-np.save("r4", r4)
-del r3
-del g18s
+# r4=dask.array.dot(r3, g18s).compute()
+# np.save("r4", r4)
+# del r3
+# del g18s
 
-r5=dask.array.dot(r4, g17s).compute()
-np.save("r5", r5)
-del r4
-del g17s
+# r5=dask.array.dot(r4, g17s).compute()
+# np.save("r5", r5)
+# del r4
+# del g17s
 
-r6=dask.array.dot(r5, g16s).compute()
-np.save("r6", r6)
-del r5
-del g16s
+# r6=dask.array.dot(r5, g16s).compute()
+# np.save("r6", r6)
+# del r5
+# del g16s
 
-r7=dask.array.dot(r6, g15s).compute()
-np.save("r7", r7)
-del r6
-del g15s
+# r7=dask.array.dot(r6, g15s).compute()
+# np.save("r7", r7)
+# del r6
+# del g15s
 
-r8=dask.array.dot(r7, g14s).compute()
-np.save("r8", r8)
-del r7
-del g14s
+# r8=dask.array.dot(r7, g14s).compute()
+# np.save("r8", r8)
+# del r7
+# del g14s
 
-r9=dask.array.dot(r8, g13s).compute()
-np.save("r9", r9)
-del r8
-del g13s
+# r9=dask.array.dot(r8, g13s).compute()
+# np.save("r9", r9)
+# del r8
+# del g13s
 
-r10=dask.array.dot(r9, g12s).compute()
-np.save("r10", r10)
-del r9
-del g12s
+# r10=dask.array.dot(r9, g12s).compute()
+# np.save("r10", r10)
+# del r9
+# del g12s
 
 # r10_rechunk = dask.array.rechunk(r10, chunks = 'auto')
 # g11s_rechunk = dask.array.rechunk(g11s, chunks = 'auto')
